@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Comments</ion-title>
+    <ion-buttons start>
+      <button (click)="dismiss()">
+        <span primary showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <form [ngFormModel]="loginForm" (submit)="doLogin($event)">
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input ngControl="author_name" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input ngControl="author_email" type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Content</ion-label>
+        <ion-textarea ngControl="content"></ion-textarea>
+      </ion-item>
+
+      <button type="submit" full center primary>Post Comment</button>
+    </form>
+
+  </ion-list>
+
+</ion-content>
